@@ -4,7 +4,9 @@ An experimental digital universe for exploring the possible versions of your fut
 Cinematic scroll storytelling over a single procedural particle planet — no backend,
 no API keys, no assets beyond fonts.
 
-**Live preview:** run it locally with the commands below.
+**Live:** https://skzunaidurrahman-stack.github.io/futureme/
+
+Every push to `main` builds and deploys via GitHub Pages (`.github/workflows/deploy.yml`).
 
 ---
 
@@ -104,14 +106,16 @@ imaginative sketch, not a prediction or advice.
 
 ## Deploying
 
-The build output is fully static:
+The build output is fully static.
 
-```bash
-npm run build
-```
+**GitHub Pages (already set up):** pushing to `main` triggers
+`.github/workflows/deploy.yml`, which installs, builds with
+`BASE_PATH=/<repo-name>/` and publishes `dist/`. One-time setup:
+*Settings → Pages → Source: GitHub Actions*.
 
-Publish `dist/` to Netlify, Vercel, Cloudflare Pages, GitHub Pages or any static
-host. No environment variables are required.
+**Anywhere else:** `npm run build` and publish `dist/`. For a sub-path host set
+`BASE_PATH=/sub/path/ npm run build`; the default is `/`. No environment
+variables or backend are required.
 
 ---
 
